@@ -4,7 +4,509 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricardo Nelumba - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #232f3e;
+            background: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 99, 132, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(54, 162, 235, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .hero {
+            background: white;
+            border-radius: 8px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #7877c6 0%, #a855f7 100%);
+            border-radius: 8px;
+            opacity: 0.8;
+        }
+
+        .hero h1 {
+            color: #232f3e;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0 8px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #687078;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .aws-link {
+            background: #7877c6;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            margin-top: 2rem;
+            display: inline-block;
+            border: none;
+        }
+
+        .aws-link:hover {
+            background: #6b6ab8;
+            transform: translateY(-1px);
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .fun-facts::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 6px;
+            opacity: 0.9;
+        }
+
+        .fun-facts h3 {
+            text-align: left;
+            color: #232f3e;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .fact-card {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            padding: 24px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .fact-card::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #7877c6 0%, #a855f7 100%);
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #232f3e;
+        }
+
+        .fact-card p {
+            color: #687078;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Cloud Facts Generator Section */
+        .cloud-facts-section {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .cloud-facts-section::before {
+            content: '☁️';
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 32px;
+        }
+
+        .cloud-facts-section h3 {
+            color: #232f3e;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cloud-facts-section > p {
+            font-size: 16px;
+            color: #687078;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .cloud-fact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 24px 0;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cloud-fact-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: white;
+            text-align: center;
+        }
+
+        .cloud-fact-text.loading {
+            font-style: italic;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .generate-cloud-fact-btn {
+            background: #7877c6;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .generate-cloud-fact-btn:hover:not(:disabled) {
+            background: #6b6ab8;
+            transform: translateY(-1px);
+        }
+
+        .generate-cloud-fact-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .cloud-facts-tech {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #687078;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* AWS Journey Section */
+        .aws-journey {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .aws-journey::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 6px;
+            opacity: 0.8;
+        }
+
+        .aws-journey h3 {
+            color: #232f3e;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .aws-journey p {
+            font-size: 16px;
+            color: #687078;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #7877c6;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #6b6ab8;
+            transform: translateY(-1px);
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            border-radius: 6px;
+            opacity: 0.9;
+        }
+
+        .contact-form h3 {
+            color: #232f3e;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .contact-form > p {
+            font-size: 16px;
+            color: #687078;
+            margin-bottom: 32px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .form-message.error {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #232f3e;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
+            background: #f8fafc;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7877c6;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(120, 119, 198, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-submit-btn {
+            background: #7877c6;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contact-submit-btn:hover {
+            background: #6b6ab8;
+            transform: translateY(-1px);
+        }
+
+        .contact-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #687078;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .hero, .fun-facts, .aws-journey, .cloud-facts-section, .contact-form {
+                padding: 24px;
+            }
+
+            .fun-facts h3, .aws-journey h3, .cloud-facts-section h3, .contact-form h3 {
+                font-size: 24px;
+            }
+
+            .cloud-fact-text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -15,19 +517,41 @@
             <a href="https://builder.aws.com/profile?trk=86c76c09-e8f4-4138-badc-604ce7bc5d77&sc_channel=el" target="_blank" class="aws-link">AWS Builder Center Profile</a>
         </section>
 
-      <!-- Change this -->
-<div class="fact-card">
-    <h4>🚀 Your First Fact</h4>
-    <p>I'm a music producer specializing in Brazilian Funk beats.</p>
-</div>
-<div class="fact-card">
-    <h4>🎯 Your Second Fact</h4>
-    <p>I'm a PC gamer but I do play on consoles as well.</p>
-</div>
-<div class="fact-card">
-    <h4>💡 Your Third Fact</h4>
-    <p>I'm passionate about anime as well</p>
-</div>
+        <section class="fun-facts">
+            <h3>About Me</h3>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <h4>🚀 Music Producer</h4>
+                    <p>I specialize in Brazilian Funk beats and love creating unique sounds.</p>
+                </div>
+                <div class="fact-card">
+                    <h4>🎯 Gamer</h4>
+                    <p>I'm a PC gamer but I do play on consoles as well.</p>
+                </div>
+                <div class="fact-card">
+                    <h4>💡 Anime Fan</h4>
+                    <p>I'm passionate about anime and Japanese culture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cloud Fun Facts Generator Integration -->
+        <section class="cloud-facts-section">
+            <h3>☁️ Cloud Fun Facts Generator</h3>
+            <p>Discover AI-enhanced cloud computing facts! This is my serverless project built with AWS Lambda, API Gateway, DynamoDB, and Bedrock AI.</p>
+
+            <div class="cloud-fact-box">
+                <p class="cloud-fact-text" id="cloudFactText">Click the button below to get an AI-enhanced cloud computing fact!</p>
+            </div>
+
+            <button class="generate-cloud-fact-btn" id="generateCloudFactBtn" onclick="getCloudFact()">
+                Generate Cloud Fact
+            </button>
+
+            <div class="cloud-facts-tech">
+                Powered by AWS Lambda + API Gateway + DynamoDB + Bedrock AI
+            </div>
+        </section>
 
         <section class="aws-journey">
             <h3>AWS Builder Challenge #2</h3>
@@ -35,14 +559,11 @@
             <a href="https://builder.aws.com/content/31C2WxIDSQive7q2Dv5xNFCmYJj/aws-builder-challenge-2-build-a-website-on-the-cloud?trk=86c76c09-e8f4-4138-badc-604ce7bc5d77&sc_channel=el" target="_blank" class="cta-button">View Challenge Details</a>
         </section>
 
-        <!-- CONTACT FORM SECTION - Added for user contact functionality -->
         <section class="contact-form">
             <h3>Get In Touch</h3>
             <p>Have a question or want to connect? Send me a message!</p>
-            <!-- Form message container for success/error messages -->
             <div id="form-message" class="form-message" style="display: none;"></div>
             <form class="contact-form-container">
-                <!-- Contact form input fields -->
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -55,18 +576,151 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <!-- Contact form submit button -->
                 <button type="submit" class="contact-submit-btn">Send Message</button>
             </form>
         </section>
-        <!-- END CONTACT FORM SECTION -->
     </main>
 
     <footer>
         <p>&copy; 2025 Ricardo Nelumba. Built with ❤️ on AWS</p>
     </footer>
     
-    <!-- Contact form JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        // Cloud Facts Generator Configuration
+        const CLOUD_FACTS_API_URL = 'https://YOUR-API-ID.execute-api.eu-west-1.amazonaws.com/funfact';
+        
+        // Contact Form Configuration
+        const CONTACT_LAMBDA_URL = 'YOUR_LAMBDA_FUNCTION_URL_HERE';
+
+        // Cloud Facts Generator Function
+        async function getCloudFact() {
+            const btn = document.getElementById('generateCloudFactBtn');
+            const factText = document.getElementById('cloudFactText');
+            
+            // Show loading state
+            btn.disabled = true;
+            btn.textContent = 'Loading...';
+            factText.textContent = 'Getting your AI-enhanced cloud fact...';
+            factText.className = 'cloud-fact-text loading';
+            
+            try {
+                const response = await fetch(CLOUD_FACTS_API_URL, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.fact || typeof data.fact !== 'string') {
+                    throw new Error('Invalid response format');
+                }
+                
+                // Display the fact
+                factText.textContent = data.fact;
+                factText.className = 'cloud-fact-text';
+                
+            } catch (error) {
+                console.error('Error fetching cloud fact:', error);
+                
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = 'Could not fetch cloud fact. Please try again!';
+                
+                factText.innerHTML = '';
+                factText.appendChild(errorDiv);
+                factText.className = 'cloud-fact-text';
+            }
+            
+            // Reset button
+            btn.disabled = false;
+            btn.textContent = 'Generate Another Fact';
+        }
+
+        // Contact Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form-container');
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('.contact-submit-btn');
+                const messageDiv = document.getElementById('form-message');
+
+                // Show loading state
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                messageDiv.style.display = 'none';
+
+                // Get form data
+                const formData = {
+                    name: form.name.value,
+                    email: form.email.value,
+                    message: form.message.value
+                };
+
+                try {
+                    const response = await fetch(CONTACT_LAMBDA_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        showMessage('Message sent successfully! Thank you for reaching out.', 'success');
+                        form.reset();
+                    } else {
+                        showMessage('Failed to send message. Please try again.', 'error');
+                    }
+                } catch (error) {
+                    showMessage('Network error. Please check your connection and try again.', 'error');
+                }
+
+                // Reset button
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
+            });
+        });
+
+        function showMessage(text, type) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = text;
+            messageDiv.className = `form-message ${type}`;
+            messageDiv.style.display = 'block';
+
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 10000);
+        }
+
+        // Check if Cloud Facts API is configured
+        window.addEventListener('load', function() {
+            if (CLOUD_FACTS_API_URL.includes('YOUR-API-ID')) {
+                const factText = document.getElementById('cloudFactText');
+                const warningDiv = document.createElement('div');
+                warningDiv.className = 'error-message';
+                warningDiv.innerHTML = '<strong>⚠️ API Configuration Required</strong><br><small>Please update CLOUD_FACTS_API_URL with your actual API Gateway endpoint</small>';
+                
+                factText.innerHTML = '';
+                factText.appendChild(warningDiv);
+                
+                document.getElementById('generateCloudFactBtn').disabled = true;
+            }
+        });
+
+        // Keyboard shortcut for cloud facts (Enter key when focused on button)
+        document.getElementById('generateCloudFactBtn').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                getCloudFact();
+            }
+        });
+    </script>
 </body>
 </html>
