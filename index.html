@@ -766,7 +766,7 @@
 
 
          // League Data Lookup - Calls Riot API via Lambda
-    const RIOT_API_URL = 'RGAPI-79707d4c-0d88-40b9-8bcd-8b4cae9053ba'; // Replace with your Function URL
+    const RIOT_API_URL = ''; // Replace with your Function URL
     
     document.addEventListener('DOMContentLoaded', function() {
         const lookupBtn = document.getElementById('lookup-btn');
@@ -778,6 +778,13 @@
             const region = regionSelect.value;
             const messageDiv = document.getElementById('lookup-message');
             const resultsDiv = document.getElementById('summoner-results');
+
+            
+            if (!RIOT_API_URL) {
+               showMessage('Riot API integration is not yet configured', 'error');
+               return;
+            }
+    
             
             if (!summonerName) {
                 showMessage('Please enter a summoner name', 'error');
