@@ -61,7 +61,7 @@ function showMessage(text, type) {
 
 
 // League Data Lookup - Calls Riot API via Lambda
-    const RIOT_API_URL = 'https://xbemdc4mxa5nnq4gum3aefx7ti0tjhva.lambda-url.us-west-2.on.aws/'; // Replace with your Function URL
+    const RIOT_API_URL = 'RGAPI-79707d4c-0d88-40b9-8bcd-8b4cae9053ba'; // Replace with your Function URL
     
     document.addEventListener('DOMContentLoaded', function() {
         const lookupBtn = document.getElementById('lookup-btn');
