@@ -34,22 +34,22 @@
         </section>
 
         <!-- Cloud Fun Facts Generator Integration -->
-        <section class="cloud-facts-section">
-            <h3>☁️ Cloud Fun Facts Generator</h3>
-            <p>Discover AI-enhanced cloud computing facts! This is my serverless project built with AWS Lambda, API Gateway, DynamoDB, and Bedrock AI.</p>
+        <div class="container">
+        <h1 class="title">☁️ Cloud Fun Facts</h1>
+        <p class="subtitle">Discover amazing facts about cloud computing!</p>
 
-            <div class="cloud-fact-box">
-                <p class="cloud-fact-text" id="cloudFactText">Click the button below to get an AI-enhanced cloud computing fact!</p>
-            </div>
+        <div class="fact-box">
+            <p class="fact-text" id="factText">Click the button below to get a fun cloud fact!</p>
+        </div>
 
-            <button class="generate-cloud-fact-btn" id="generateCloudFactBtn" onclick="getCloudFact()">
-                Generate Fun Facts about Me
-            </button>
+        <button class="generate-btn" id="generateBtn" onclick="getFact()">
+            Generate Fun Fact
+        </button>
 
-            <div class="cloud-facts-tech">
-                Powered by AWS Lambda + API Gateway + DynamoDB + Bedrock AI
-            </div>
-        </section>
+        <div class="tech-info">
+            Powered by AWS Lambda + API Gateway + DynamoDB + Bedrock AI
+        </div>
+    </div>
 
         <section class="aws-journey">
             <h3>AWS Builder Challenge #2</h3>
