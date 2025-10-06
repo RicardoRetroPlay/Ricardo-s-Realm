@@ -595,7 +595,7 @@ footer {
 
         .title {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #000000;
             margin-bottom: 10px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
