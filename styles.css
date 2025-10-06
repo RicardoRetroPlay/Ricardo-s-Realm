@@ -8,7 +8,7 @@ body {
     font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #232f3e;
-    background: linear-gradient(135deg, #19180A 0%, #000000 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -22,9 +22,9 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(59, 5, 5, 0.704) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(9, 58, 71, 0.752) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(30, 22, 3, 0.779) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -47,13 +47,19 @@ main {
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     text-align: center;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .hero:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
+    transform: scale(1.05);
+}
+
+main:hover > section:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.95);
 }
 
 .hero::before {
@@ -147,12 +153,14 @@ section .container {
     max-width: 100%;
     text-align: center;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 section .container:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .container .title {
@@ -248,12 +256,14 @@ section .container:hover {
     text-align: center;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .aws-journey:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .aws-journey::after {
@@ -318,12 +328,14 @@ section .container:hover {
     margin-bottom: 40px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .contact-form:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .contact-form::before {
@@ -463,12 +475,14 @@ section .container:hover {
     margin-bottom: 40px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .league-lookup:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .league-lookup::before {
