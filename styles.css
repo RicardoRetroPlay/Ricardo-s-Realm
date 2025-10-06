@@ -23,7 +23,7 @@ body::before {
     height: 100%;
     background:
         radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(205, 14, 14, 0.373) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(2, 1, 1, 0.621) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(25, 24, 10, 0.1) 0%, transparent 50%);
     z-index: -1;
 }
