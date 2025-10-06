@@ -207,7 +207,7 @@ section .container:hover {
 }
 
 .generate-btn {
-    background: rgba(170, 40, 226, 0.714);
+    background: rgba(88, 83, 90, 0.714);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 16px 36px;
@@ -225,7 +225,7 @@ section .container:hover {
 
 .generate-btn:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(180, 56, 238, 0.586);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
