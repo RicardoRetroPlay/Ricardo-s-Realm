@@ -37,11 +37,16 @@ main {
 
 /* HERO SECTION */
 .hero {
-   color: white;
-  position: relative;
-  font-family: sans-serif
+    border-radius: 12px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+
 }
 
+.hero::before
 .hero::after {
     content: '';
     position: absolute;
@@ -52,6 +57,9 @@ main {
     background: linear-gradient(135deg, #7877c6 0%, #a855f7 100%);
     border-radius: 8px;
     opacity: 0.8;
+    content: "";
+    background-color: #fab5704c;
+    position: absolute;
 }
 
 .profile-photo {
