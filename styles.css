@@ -261,7 +261,7 @@ section .container:hover {
 }
 
 .aws-journey:hover {
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(26, 238, 10, 0.785);
     border: 1px solid rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
 }
@@ -312,7 +312,7 @@ section .container:hover {
 }
 
 .cta-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(26, 238, 10, 0.785);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
